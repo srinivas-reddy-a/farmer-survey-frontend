@@ -9,12 +9,12 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/FarmerDetails"
         tools:ignore="HardcodedText">
 
         <com.google.android.material.textfield.TextInputLayout
@@ -84,56 +84,56 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="16dp"
             android:padding="4dp"
             android:text="Problems"
-            android:textSize="26dp"
             android:textColor="@color/black"
-            android:textStyle="bold"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="16dp"/>
+            android:textSize="26dp"
+            android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="4dp"
-            >
+            android:layout_marginTop="2dp"
+            android:orientation="horizontal">
+
             <EditText
                 android:id="@+id/problems"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:textSize="16sp"
+                android:hint="problems"
                 android:maxLines="15"
-                android:hint="problems"/>
+                android:textSize="16sp" />
 
         </LinearLayout>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="16dp"
             android:padding="4dp"
             android:text="Needs"
-            android:textSize="26dp"
             android:textColor="@color/black"
-            android:textStyle="bold"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="16dp"/>
+            android:textSize="26dp"
+            android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="4dp"
-            >
+            android:layout_marginTop="2dp"
+            android:orientation="horizontal">
+
             <EditText
                 android:id="@+id/needs"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:textSize="16sp"
+                android:hint="Needs"
                 android:maxLines="15"
-                android:hint="Needs"/>
+                android:textSize="16sp" />
 
         </LinearLayout>
 
@@ -141,11 +141,20 @@
             android:id="@+id/add"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="add"
-            android:layout_marginTop="16dp"
             android:layout_marginStart="150dp"
-            />
+            android:layout_marginTop="16dp"
+            android:text="add" />
 
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/FarmerDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:text="Farmers Detail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
