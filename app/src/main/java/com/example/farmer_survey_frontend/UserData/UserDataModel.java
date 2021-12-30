@@ -4,16 +4,16 @@ public class UserDataModel {
     private String name;
     private String number;
     private String village;
-    private String pinCode;
-    private String problem;
+    private String pincode;
+    private String problems;
     private String needs;
 
-    public UserDataModel(String name, String number, String village, String pinCode, String problem, String needs) {
+    public UserDataModel(String name, String number, String village, String pincode, String problems, String needs) {
         this.name = name;
         this.number = number;
         this.village = village;
-        this.pinCode = pinCode;
-        this.problem = problem;
+        this.pincode = pincode;
+        this.problems = problems;
         this.needs = needs;
     }
 
@@ -42,19 +42,19 @@ public class UserDataModel {
     }
 
     public String getPinCode() {
-        return pinCode;
+        return pincode;
     }
 
-    public void setPinCode(String pinCode) {
-        this.pinCode = pinCode;
+    public void setPinCode(String pincode) {
+        this.pincode = pincode;
     }
 
     public String getProblem() {
-        return problem;
+        return problems;
     }
 
-    public void setProblem(String problem) {
-        this.problem = problem;
+    public void setProblem(String problems) {
+        this.problems = problems;
     }
 
     public String getNeeds() {

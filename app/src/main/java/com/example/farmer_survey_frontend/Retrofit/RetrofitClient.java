@@ -8,18 +8,18 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitClient {
 
-    private static final String BASE_URL = "http://10.0.2.2:3000"; //95d7-106-215-84-42.ngrok.io
-    OkHttpClient client = new OkHttpClient.Builder()
-            .connectTimeout(50, TimeUnit.SECONDS)
-            .readTimeout(50,TimeUnit.SECONDS)
-            .build();
+    private static final String BASE_URL = "https://farmer-survey.herokuapp.com/"; //95d7-106-215-84-42.ngrok.io
+//    OkHttpClient client = new OkHttpClient.Builder()
+//            .connectTimeout(5, TimeUnit.SECONDS)
+//            .readTimeout(5,TimeUnit.SECONDS)
+//            .build();
     private static RetrofitClient retrofitClient;
     private static Retrofit retrofit;
 
 
     private RetrofitClient(){
         retrofit = new Retrofit.Builder()
-                .baseUrl(BASE_URL).client(client)
+                .baseUrl(BASE_URL)   //.client(client)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
     }
