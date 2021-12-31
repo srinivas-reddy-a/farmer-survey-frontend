@@ -89,7 +89,7 @@
             android:padding="4dp"
             android:text="Problems"
             android:textColor="@color/black"
-            android:textSize="26dp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <LinearLayout
@@ -117,7 +117,7 @@
             android:padding="4dp"
             android:text="Needs"
             android:textColor="@color/black"
-            android:textSize="26dp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <LinearLayout
@@ -155,8 +155,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
+        android:backgroundTint="@color/black"
         android:text="Farmers Detail"
-        android:backgroundTint="#00d66c"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
