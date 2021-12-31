@@ -6,157 +6,184 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:orientation="vertical"
+    <ScrollView
+        android:layout_width="409dp"
+        android:layout_height="729dp"
+        android:windowSoftInputMode="adjustResize"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/FarmerDetails"
-        tools:ignore="HardcodedText">
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/filledTextField"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="32dp"
-            android:hint="Enter Name">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edit_text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/filledTextField1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="32dp"
-            android:hint="Number">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edit_text1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/filledTextField2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="32dp"
-            android:hint="Village">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edit_text2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/filledTextField3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="32dp"
-            android:hint="PinCode">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edit_text3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="16dp"
-            android:padding="4dp"
-            android:text="Problems"
-            android:textColor="@color/black"
-            android:textSize="26dp"
-            android:textStyle="bold" />
+        app:layout_constraintTop_toTopOf="parent"
+       >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
-            android:orientation="horizontal">
-
-            <EditText
-                android:id="@+id/problems"
+            android:orientation="vertical" >
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:hint="problems"
-                android:maxLines="15"
-                android:textSize="16sp" />
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/FarmerDetails"
+                tools:ignore="HardcodedText">
+
+                <Button
+                    android:id="@+id/FarmerDetails"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="220dp"
+                    android:backgroundTint="#00d66c"
+                    android:text="Farmers Detail"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/filledTextField"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="32dp"
+                    app:hintTextColor="@color/black"
+                    android:hint="Enter Name">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edit_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/filledTextField1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="32dp"
+                    app:hintTextColor="@color/black"
+                    android:hint="Number">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edit_text1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/filledTextField2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="32dp"
+                    app:hintTextColor="@color/black"
+                    android:hint="Village">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edit_text2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLines="2"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/filledTextField3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="32dp"
+                    app:hintTextColor="@color/black"
+                    android:hint="PinCode">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edit_text3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="16dp"
+                    android:padding="4dp"
+                    android:text="Problems"
+                    android:textColor="@color/black"
+                    android:textSize="26dp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/problems"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:hint="problems"
+                        android:maxLines="15"
+                        android:textSize="16sp"
+                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="16dp"
+                    android:padding="4dp"
+                    android:text="Needs"
+                    android:textColor="@color/black"
+                    android:textSize="26dp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/needs"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:hint="Needs"
+                        android:maxLines="15"
+                        android:textSize="16sp"
+                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="150dp"
+                    android:layout_marginTop="16dp"
+                    android:backgroundTint="#00d66c"
+                    android:text="add" />
+
+
+            </LinearLayout>
 
         </LinearLayout>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="16dp"
-            android:padding="4dp"
-            android:text="Needs"
-            android:textColor="@color/black"
-            android:textSize="26dp"
-            android:textStyle="bold" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
-            android:orientation="horizontal">
-
-            <EditText
-                android:id="@+id/needs"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:hint="Needs"
-                android:maxLines="15"
-                android:textSize="16sp" />
-
-        </LinearLayout>
-
-        <Button
-            android:id="@+id/add"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="150dp"
-            android:layout_marginTop="16dp"
-            android:backgroundTint="#00d66c"
-            android:text="add" />
-
-
-    </LinearLayout>
-
-    <Button
-        android:id="@+id/FarmerDetails"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:text="Farmers Detail"
-        android:backgroundTint="#00d66c"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
