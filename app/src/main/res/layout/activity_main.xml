@@ -143,6 +143,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="150dp"
             android:layout_marginTop="16dp"
+            android:backgroundTint="#00d66c"
             android:text="add" />
 
 
@@ -155,6 +156,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:text="Farmers Detail"
+        android:backgroundTint="#00d66c"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
