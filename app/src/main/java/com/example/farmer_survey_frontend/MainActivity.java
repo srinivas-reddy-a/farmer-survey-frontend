@@ -71,6 +71,37 @@ public class MainActivity extends AppCompatActivity {
         String problems =problem.getText().toString();
         String needs=need.getText().toString();
 
+        if(name.isEmpty()){
+            edit_text.requestFocus();
+            edit_text.setError("please enter name");
+            return;
+        }
+        if(number.isEmpty()){
+            edit_text1.requestFocus();
+            edit_text1.setError("please enter number");
+            return;
+        }
+        if(village.isEmpty()){
+            edit_text2.requestFocus();
+            edit_text2.setError("please enter village name");
+            return;
+        }
+        if(pincode.isEmpty()){
+            edit_text3.requestFocus();
+            edit_text3.setError("please enter pinCode");
+            return;
+        }
+        if(problems.isEmpty()){
+            problem.requestFocus();
+            problem.setError("please enter problem");
+            return;
+        }
+        if(needs.isEmpty()){
+            need.requestFocus();
+            need.setError("please enter need");
+            return;
+        }
+
         Call<ResponseBody> call = RetrofitClient.getInstance().getApi().postFarmerData(name,number,village,pincode,problems,needs);
         call.enqueue(new Callback<ResponseBody>() {
             @Override
