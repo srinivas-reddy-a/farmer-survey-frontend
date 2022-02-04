@@ -1,20 +1,30 @@
 package com.example.farmer_survey_frontend.UserData;
 
 public class UserDataModel {
+    private String id;
     private String name;
-    private String number;
+    private int number;
     private String village;
-    private String pincode;
+    private int pincode;
     private String problems;
     private String needs;
 
-    public UserDataModel(String name, String number, String village, String pincode, String problems, String needs) {
+    public UserDataModel(String id,String name, int number, String village, int pincode, String problems, String needs) {
+        this.id = id ;
         this.name = name;
         this.number = number;
         this.village = village;
         this.pincode = pincode;
         this.problems = problems;
         this.needs = needs;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -25,11 +35,11 @@ public class UserDataModel {
         this.name = name;
     }
 
-    public String getNumber() {
+    public int getNumber() {
         return number;
     }
 
-    public void setNumber(String number) {
+    public void setNumber(int number) {
         this.number = number;
     }
 
@@ -41,11 +51,11 @@ public class UserDataModel {
         this.village = village;
     }
 
-    public String getPinCode() {
+    public int getPinCode() {
         return pincode;
     }
 
-    public void setPinCode(String pincode) {
+    public void setPinCode(int pincode) {
         this.pincode = pincode;
     }
 

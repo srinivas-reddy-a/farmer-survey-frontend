@@ -43,6 +43,11 @@ public class MainActivity extends AppCompatActivity {
             add.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+//                    edit_text1.setText("1744748");
+//                    edit_text2.setText("n");
+//                    edit_text3.setText("154746");
+//                    problem.setText("n");
+//                    need.setText("n");
                     addData();
                 }
             });
@@ -65,44 +70,51 @@ public class MainActivity extends AppCompatActivity {
 
 
         String name= edit_text.getText().toString();
-        String number=edit_text1.getText().toString();
-        String village =edit_text2.getText().toString();
-        String pincode=edit_text3.getText().toString();
-        String problems =problem.getText().toString();
-        String needs=need.getText().toString();
+//        String number=edit_text1.getText().toString();
+//        String village =edit_text2.getText().toString();
+//        String pincode=edit_text3.getText().toString();
+//        String problems =problem.getText().toString();
+//        String needs=need.getText().toString();
+
 
         if(name.isEmpty()){
             edit_text.requestFocus();
             edit_text.setError("please enter name");
             return;
         }
-        if(number.isEmpty()){
-            edit_text1.requestFocus();
-            edit_text1.setError("please enter number");
-            return;
-        }
-        if(village.isEmpty()){
-            edit_text2.requestFocus();
-            edit_text2.setError("please enter village name");
-            return;
-        }
-        if(pincode.isEmpty()){
-            edit_text3.requestFocus();
-            edit_text3.setError("please enter pinCode");
-            return;
-        }
-        if(problems.isEmpty()){
-            problem.requestFocus();
-            problem.setError("please enter problem");
-            return;
-        }
-        if(needs.isEmpty()){
-            need.requestFocus();
-            need.setError("please enter need");
-            return;
-        }
+//        if(number.isEmpty()){
+//            edit_text1.setText("1");
+//            n = edit_text1.getText().toString();
+//        }else {
+//            n = number;
+//        }
+//        if(village.isEmpty()){
+//            edit_text2.setText("null");
+//            v = edit_text2.getText().toString();
+//        }else {
+//            v = village;
+//        }
+//        if(pincode.isEmpty()){
+//            edit_text3.setText("1");
+//            p = edit_text3.getText().toString();
+//        }else {
+//            p = pincode;
+//        }
+//        if(problems.isEmpty()){
+//            problem.setText("null");
+//            pr = problem.getText().toString();
+//        }else {
+//            pr = problems;
+//        }
+//        if(needs.isEmpty()){
+//            need.setText("null");
+//            ne = need.getText().toString();
+//        }else {
+//            ne = needs;
+//        }
 
-        Call<ResponseBody> call = RetrofitClient.getInstance().getApi().postFarmerData(name,number,village,pincode,problems,needs);
+        Call<ResponseBody> call = RetrofitClient.getInstance().getApi().postFarmerData(name,567887,"village",110090,"problems","needs");
+
         call.enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {

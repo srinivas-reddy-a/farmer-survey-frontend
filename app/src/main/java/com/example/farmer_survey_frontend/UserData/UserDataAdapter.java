@@ -16,6 +16,7 @@ public class UserDataAdapter extends RecyclerView.Adapter<UserDataAdapter.ViewHo
 
     private List<UserDataModel> userDataModels;
 
+
     public UserDataAdapter(List<UserDataModel> userDataModels) {
         this.userDataModels = userDataModels;
     }
@@ -31,9 +32,9 @@ public class UserDataAdapter extends RecyclerView.Adapter<UserDataAdapter.ViewHo
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         String name = userDataModels.get(position).getName();
-        String number = userDataModels.get(position).getNumber();
+        int number = userDataModels.get(position).getNumber();
         String village = userDataModels.get(position).getVillage();
-        String pinCode = userDataModels.get(position).getPinCode();
+        int pinCode = userDataModels.get(position).getPinCode();
         String problems = userDataModels.get(position).getProblem();
         String need = userDataModels.get(position).getNeeds();
         holder.SetData(name,number,village,pinCode,problems,need);
@@ -46,7 +47,8 @@ public class UserDataAdapter extends RecyclerView.Adapter<UserDataAdapter.ViewHo
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         private TextView UserNameData,UserNumberData,UserVillageData,UserPinCodeData,
-                UserProblemData,UserNeedsData;
+                UserProblemData,UserNeedsData ,User_S_no;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             UserNameData = itemView.findViewById(R.id.UserNameData);
@@ -55,16 +57,21 @@ public class UserDataAdapter extends RecyclerView.Adapter<UserDataAdapter.ViewHo
             UserPinCodeData = itemView.findViewById(R.id.UserPinCodeData);
             UserProblemData = itemView.findViewById(R.id.UserProblemData);
             UserNeedsData = itemView.findViewById(R.id.UserNeedsData);
+            User_S_no = itemView.findViewById(R.id.User_S_no);
+
 
         }
-        private void SetData(String name,String number,String village,String pinCode,String Problems,String needs){
+        private void SetData(String name,int number,String village,int pinCode,String Problems,String needs){
+            int i=getAdapterPosition();
+            String p = Integer.toString(i);
+            User_S_no.setText(p);
+
             UserNameData.setText(name);
             UserNumberData.setText(number);
             UserVillageData.setText(village);
             UserPinCodeData.setText(pinCode);
             UserProblemData.setText(Problems);
             UserNeedsData.setText(needs);
-
         }
 
     }
