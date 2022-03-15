@@ -59,7 +59,7 @@ public class UserDataActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<GetFarmerDataRespones> call, Response<GetFarmerDataRespones> response) {
                 userDataModels = response.body().getData();
-                userDataAdapter = new UserDataAdapter(userDataModels);
+                userDataAdapter = new UserDataAdapter(userDataModels,UserDataActivity.this);
                 UserDataRecyclerView.setAdapter(userDataAdapter);
             }
 

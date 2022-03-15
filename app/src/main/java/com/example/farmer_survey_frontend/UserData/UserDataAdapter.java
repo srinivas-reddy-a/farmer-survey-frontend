@@ -1,9 +1,14 @@
 package com.example.farmer_survey_frontend.UserData;
 
+import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -15,10 +20,11 @@ import java.util.List;
 public class UserDataAdapter extends RecyclerView.Adapter<UserDataAdapter.ViewHolder> {
 
     private List<UserDataModel> userDataModels;
+    Context context;
 
-
-    public UserDataAdapter(List<UserDataModel> userDataModels) {
+    public UserDataAdapter(List<UserDataModel> userDataModels, Context context) {
         this.userDataModels = userDataModels;
+        this.context = context;
     }
 
     @NonNull
@@ -32,11 +38,27 @@ public class UserDataAdapter extends RecyclerView.Adapter<UserDataAdapter.ViewHo
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         String name = userDataModels.get(position).getName();
-        int number = userDataModels.get(position).getNumber();
+        String number = userDataModels.get(position).getNumber();
         String village = userDataModels.get(position).getVillage();
-        int pinCode = userDataModels.get(position).getPinCode();
-        String problems = userDataModels.get(position).getProblem();
+        String pinCode = userDataModels.get(position).getPincode();
+        String problems = userDataModels.get(position).getProblems();
         String need = userDataModels.get(position).getNeeds();
+
+        //call
+        holder.call.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_DIAL);
+                String uriText = "tel:+91"+number;
+                try {
+                    intent.setData(Uri.parse(uriText));
+                    context.startActivity(intent);
+                } catch (Exception e) {
+                    Toast.makeText(context, "Something went wrong", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
         holder.SetData(name,number,village,pinCode,problems,need);
     }
 
@@ -48,6 +70,7 @@ public class UserDataAdapter extends RecyclerView.Adapter<UserDataAdapter.ViewHo
     public class ViewHolder extends RecyclerView.ViewHolder {
         private TextView UserNameData,UserNumberData,UserVillageData,UserPinCodeData,
                 UserProblemData,UserNeedsData ,User_S_no;
+        private ImageView call;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -58,10 +81,11 @@ public class UserDataAdapter extends RecyclerView.Adapter<UserDataAdapter.ViewHo
             UserProblemData = itemView.findViewById(R.id.UserProblemData);
             UserNeedsData = itemView.findViewById(R.id.UserNeedsData);
             User_S_no = itemView.findViewById(R.id.User_S_no);
+            call = itemView.findViewById(R.id.call);
 
 
         }
-        private void SetData(String name,int number,String village,int pinCode,String Problems,String needs){
+        private void SetData(String name,String number,String village,String pinCode,String Problems,String needs){
             int i=getAdapterPosition();
             String p = Integer.toString(i);
             User_S_no.setText(p);
@@ -69,7 +93,7 @@ public class UserDataAdapter extends RecyclerView.Adapter<UserDataAdapter.ViewHo
             UserNameData.setText(name);
             UserNumberData.setText(number);
             UserVillageData.setText(village);
-            UserPinCodeData.setText(pinCode);
+            UserPinCodeData.setText("pinCode "+pinCode);
             UserProblemData.setText(Problems);
             UserNeedsData.setText(needs);
         }

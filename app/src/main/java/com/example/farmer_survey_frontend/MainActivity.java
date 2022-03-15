@@ -1,6 +1,7 @@
 package com.example.farmer_survey_frontend;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -70,11 +72,11 @@ public class MainActivity extends AppCompatActivity {
 
 
         String name= edit_text.getText().toString();
-//        String number=edit_text1.getText().toString();
-//        String village =edit_text2.getText().toString();
-//        String pincode=edit_text3.getText().toString();
-//        String problems =problem.getText().toString();
-//        String needs=need.getText().toString();
+        String number=edit_text1.getText().toString();
+        String village =edit_text2.getText().toString();
+        String pincode=edit_text3.getText().toString();
+        String problems =problem.getText().toString();
+        String needs=need.getText().toString();
 
 
         if(name.isEmpty()){
@@ -113,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
 //            ne = needs;
 //        }
 
-        Call<ResponseBody> call = RetrofitClient.getInstance().getApi().postFarmerData(name,567887,"village",110090,"problems","needs");
+        Call<ResponseBody> call = RetrofitClient.getInstance().getApi().postFarmerData(name,number,village,pincode,problems,needs);
 
         call.enqueue(new Callback<ResponseBody>() {
             @Override

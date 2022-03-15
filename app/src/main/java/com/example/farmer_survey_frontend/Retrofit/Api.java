@@ -18,9 +18,9 @@ public interface Api {
     @FormUrlEncoded
     @POST("/api/user/")
     Call<ResponseBody>postFarmerData(@Field("name") String name,
-                                     @Field("number") int number,
+                                     @Field("number") String number,
                                      @Field("village") String village,
-                                     @Field("pincode") int pincode,
+                                     @Field("pincode") String pincode,
                                      @Field("problems") String problems,
                                      @Field("needs") String needs);
 

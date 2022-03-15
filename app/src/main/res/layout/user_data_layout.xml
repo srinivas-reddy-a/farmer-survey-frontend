@@ -23,11 +23,12 @@
 
     <TextView
         android:id="@+id/UserNameData"
-        android:layout_width="wrap_content"
+        android:layout_width="240dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="10dp"
         android:text="Farmer name"
+        android:maxLines="3"
         android:textColor="#000000"
         android:textSize="16dp"
         android:textStyle="bold"
@@ -38,14 +39,13 @@
         android:id="@+id/UserNumberData"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="8dp"
         android:text="Farmer number"
         android:textColor="#000000"
         android:textSize="16dp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/UserNameData"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="@+id/UserNameData"
+        app:layout_constraintTop_toBottomOf="@+id/UserNameData" />
 
     <LinearLayout
         android:id="@+id/linearLayout2"
@@ -53,18 +53,17 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:orientation="horizontal"
-        android:padding="3dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="vertical"
         app:layout_constraintStart_toStartOf="@+id/UserNameData"
-        app:layout_constraintTop_toBottomOf="@+id/UserNameData">
+        app:layout_constraintTop_toBottomOf="@+id/UserNumberData">
 
         <TextView
             android:id="@+id/UserVillageData"
-            android:layout_width="wrap_content"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="0dp"
             android:text="village"
+            android:maxLines="5"
             android:textColor="#000000"
             android:textSize="14dp" />
 
@@ -72,7 +71,7 @@
             android:id="@+id/UserPinCodeData"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
             android:text="PinCode"
             android:textColor="#000000"
             android:textSize="14dp" />
@@ -85,6 +84,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="Farmer Problems"
+        android:textColor="@color/black"
         android:textSize="12dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/linearLayout2"
@@ -97,7 +97,6 @@
         android:layout_marginTop="4dp"
         android:layout_marginEnd="8dp"
         android:orientation="vertical"
-        android:padding="2dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/text"
         app:layout_constraintTop_toBottomOf="@+id/text">
@@ -127,6 +126,7 @@
         android:text="Farmer Needs"
         android:textSize="12dp"
         android:textStyle="bold"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="@+id/linearLayout"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
@@ -138,7 +138,6 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="16dp"
         android:orientation="vertical"
-        android:padding="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/text1"
@@ -161,6 +160,18 @@
 
     </LinearLayout>
 
+    <ImageView
+        android:id="@+id/call"
+        android:layout_width="50dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:padding="4dp"
+        android:elevation="5dp"
+        android:background="#6BCC6E"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_local_phone_24" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
