@@ -8,8 +8,9 @@ public class UserDataModel {
     private String pincode;
     private String problems;
     private String needs;
+    private String created_at;
 
-    public UserDataModel(String id, String name, String number, String village, String pincode, String problems, String needs) {
+    public UserDataModel(String id, String name, String number, String village, String pincode, String problems, String needs, String created_at) {
         this.id = id;
         this.name = name;
         this.number = number;
@@ -17,6 +18,7 @@ public class UserDataModel {
         this.pincode = pincode;
         this.problems = problems;
         this.needs = needs;
+        this.created_at = created_at;
     }
 
     public String getId() {
@@ -73,5 +75,13 @@ public class UserDataModel {
 
     public void setNeeds(String needs) {
         this.needs = needs;
+    }
+
+    public String getCreated_at() {
+        return created_at;
+    }
+
+    public void setCreated_at(String created_at) {
+        this.created_at = created_at;
     }
 }

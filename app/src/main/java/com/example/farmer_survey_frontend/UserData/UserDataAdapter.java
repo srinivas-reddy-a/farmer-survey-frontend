@@ -43,6 +43,7 @@ public class UserDataAdapter extends RecyclerView.Adapter<UserDataAdapter.ViewHo
         String pinCode = userDataModels.get(position).getPincode();
         String problems = userDataModels.get(position).getProblems();
         String need = userDataModels.get(position).getNeeds();
+        String Date = userDataModels.get(position).getCreated_at();
 
         //call
         holder.call.setOnClickListener(new View.OnClickListener() {
@@ -59,7 +60,7 @@ public class UserDataAdapter extends RecyclerView.Adapter<UserDataAdapter.ViewHo
             }
         });
 
-        holder.SetData(name,number,village,pinCode,problems,need);
+        holder.SetData(name,number,village,pinCode,problems,need,Date);
     }
 
     @Override
@@ -69,7 +70,7 @@ public class UserDataAdapter extends RecyclerView.Adapter<UserDataAdapter.ViewHo
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         private TextView UserNameData,UserNumberData,UserVillageData,UserPinCodeData,
-                UserProblemData,UserNeedsData ,User_S_no;
+                UserProblemData,UserNeedsData ,User_S_no,Date;
         private ImageView call;
 
         public ViewHolder(@NonNull View itemView) {
@@ -81,12 +82,13 @@ public class UserDataAdapter extends RecyclerView.Adapter<UserDataAdapter.ViewHo
             UserProblemData = itemView.findViewById(R.id.UserProblemData);
             UserNeedsData = itemView.findViewById(R.id.UserNeedsData);
             User_S_no = itemView.findViewById(R.id.User_S_no);
+            Date = itemView.findViewById(R.id.Date);
             call = itemView.findViewById(R.id.call);
 
 
         }
-        private void SetData(String name,String number,String village,String pinCode,String Problems,String needs){
-            int i=getAdapterPosition();
+        private void SetData(String name,String number,String village,String pinCode,String Problems,String needs ,String date){
+            int i=getAdapterPosition() + 1;
             String p = Integer.toString(i);
             User_S_no.setText(p);
 
@@ -94,8 +96,23 @@ public class UserDataAdapter extends RecyclerView.Adapter<UserDataAdapter.ViewHo
             UserNumberData.setText(number);
             UserVillageData.setText(village);
             UserPinCodeData.setText("pinCode "+pinCode);
-            UserProblemData.setText(Problems);
-            UserNeedsData.setText(needs);
+            if(needs!=null) {
+                UserProblemData.setText(Problems);
+            }else {
+                UserProblemData.setVisibility(View.GONE);
+                itemView.findViewById(R.id.text).setVisibility(View.GONE);
+            }
+            if(needs!=null) {
+                UserNeedsData.setText(needs);
+            }else {
+                UserNeedsData.setVisibility(View.GONE);
+                itemView.findViewById(R.id.text1).setVisibility(View.GONE);
+            }
+            if(date!=null ) {
+                Date.setText("Date" + date);
+            }else {
+                Date.setVisibility(View.GONE);
+            }
         }
 
     }
