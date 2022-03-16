@@ -45,21 +45,6 @@ public class UserDataAdapter extends RecyclerView.Adapter<UserDataAdapter.ViewHo
         String need = userDataModels.get(position).getNeeds();
         String Date = userDataModels.get(position).getCreated_at();
 
-        //call
-        holder.call.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_DIAL);
-                String uriText = "tel:+91"+number;
-                try {
-                    intent.setData(Uri.parse(uriText));
-                    context.startActivity(intent);
-                } catch (Exception e) {
-                    Toast.makeText(context, "Something went wrong", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-
         holder.SetData(name,number,village,pinCode,problems,need,Date);
     }
 
@@ -84,6 +69,21 @@ public class UserDataAdapter extends RecyclerView.Adapter<UserDataAdapter.ViewHo
             User_S_no = itemView.findViewById(R.id.User_S_no);
             Date = itemView.findViewById(R.id.Date);
             call = itemView.findViewById(R.id.call);
+
+            call.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(Intent.ACTION_DIAL);
+                    String uriText = "tel:+91"+userDataModels.get(getAdapterPosition()).getNumber();
+                    try {
+                        intent.setData(Uri.parse(uriText));
+                        context.startActivity(intent);
+                    } catch (Exception e) {
+                        Toast.makeText(context, "Something went wrong", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
+
 
 
         }
@@ -113,6 +113,8 @@ public class UserDataAdapter extends RecyclerView.Adapter<UserDataAdapter.ViewHo
             }else {
                 Date.setVisibility(View.GONE);
             }
+
+
         }
 
     }

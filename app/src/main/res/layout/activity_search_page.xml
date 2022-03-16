@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SearchPage.SearchPageActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#F5F5F5">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:contentScrim="#F5F5F5"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+
+            app:toolbarId="@+id/toolbar">
+
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/searchPageBackIV"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="left"
+                    app:srcCompat="@drawable/ic_baseline_west_24"
+                    tools:layout_editor_absoluteX="16dp"
+                    tools:layout_editor_absoluteY="3dp" />
+
+                <EditText
+                    android:id="@+id/searchPageET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15sp"
+                    android:layout_marginTop="15sp"
+                    android:layout_marginEnd="10sp"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginRight="15sp"
+                    android:layout_marginBottom="15sp"
+                    android:background="@drawable/squared_corners"
+                    android:ems="10"
+                    android:hint="Search Arraykart.com"
+                    android:inputType="textPersonName"
+                    android:padding="10sp"
+                    android:paddingStart="16sp"
+                    />
+
+                <ImageView
+                    android:id="@+id/SearchPP"
+                    android:layout_width="35dp"
+                    android:layout_height="37dp"
+                    android:layout_gravity="right"
+                    android:background="@color/white"
+                    android:layout_marginEnd="15dp"
+                    app:srcCompat="@drawable/ic_baseline_search_24" />
+
+            </androidx.appcompat.widget.Toolbar>
+
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".SearchPage.SearchPageActivity">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/textForSearch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:visibility="gone"
+                    android:text="text"
+                    android:textColor="#5F5A5A"
+                    android:textSize="18dp"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/searchPageRV"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
