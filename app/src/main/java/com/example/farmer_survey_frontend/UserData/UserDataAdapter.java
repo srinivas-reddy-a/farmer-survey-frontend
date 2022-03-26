@@ -84,6 +84,14 @@ public class UserDataAdapter extends RecyclerView.Adapter<UserDataAdapter.ViewHo
                 }
             });
 
+            itemView.findViewById(R.id.doMessage).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent in = new Intent(Intent.ACTION_VIEW,Uri.fromParts("sms",userDataModels.get(getAdapterPosition()).getNumber(),null));
+                    context.startActivity(in);
+                }
+            });
+
 
 
         }

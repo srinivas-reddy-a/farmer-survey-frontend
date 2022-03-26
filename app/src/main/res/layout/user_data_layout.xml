@@ -92,12 +92,11 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="0dp"
+        android:layout_width="260dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="8dp"
         android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/text"
         app:layout_constraintTop_toBottomOf="@+id/text">
 
@@ -132,12 +131,11 @@
 
     <LinearLayout
         android:id="@+id/linearLayout1"
-        android:layout_width="0dp"
+        android:layout_width="260dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="8dp"
         android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/text1"
         app:layout_constraintTop_toBottomOf="@+id/text1">
 
@@ -180,6 +178,18 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/linearLayout1"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout1" />
+
+    <ImageView
+        android:id="@+id/doMessage"
+        android:layout_width="50dp"
+        android:layout_height="80dp"
+        android:background="#F6CD52"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/call"
+        app:layout_constraintStart_toStartOf="@+id/call"
+        app:layout_constraintTop_toBottomOf="@+id/call"
+        app:srcCompat="@drawable/ic_baseline_message_24"
+        app:tint="@color/white" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
